@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layoutDirection="ltr">
+            <RelativeLayout android:background="@color/home_fg_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <ImageView android:background="@color/theme_color" android:layout_width="fill_parent" android:layout_height="296.0dip" android:layout_alignParentTop="true" />
+                <RelativeLayout android:gravity="center_vertical" android:id="@id/rl_top" android:padding="@dimen/dp_10" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ImageView android:id="@id/img_cup" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/home_list_icon" />
+                    <ImageButton android:id="@id/imgbtn_refresh" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/home_refresh" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <xfkj.fitpro.view.MySportView android:id="@id/sprotView" android:layout_width="fill_parent" android:layout_height="120.0dip" android:layout_marginTop="28.0dip" android:layout_below="@id/rl_top" app:inCircleWidth="30.0dip" />
+                <TextView android:textSize="13.0sp" android:textColor="@color/white" android:id="@id/tv_target" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14.0dip" android:text="目标: 8000" android:layout_below="@id/sprotView" android:layout_centerHorizontal="true" />
+                <xfkj.fitpro.view.skin.SkinImageView android:id="@id/skin_logo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:src="@mipmap/equipment_bg_logo" android:layout_below="@id/tv_target" android:layout_alignParentRight="true" style="@style/skin_img_1_style" />
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/skin_logo">
+                    <androidx.cardview.widget.CardView android:id="@id/cardview_sport" android:layout_height="124.0dip" android:layout_marginTop="12.0dip" android:layout_marginBottom="12.0dip" android:minHeight="124.0dip" style="@style/home_cardview_style">
+                        <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                            <RelativeLayout style="@style/home_cardview1_layout1_style">
+                                <TextView android:id="@id/tv_distance_title" android:text="@string/distance" android:drawableBottom="@mipmap/home_distance_icon" style="@style/home_cardview1_tv1_style" />
+                                <xfkj.fitpro.view.NewsLabFontsTextView android:id="@id/tv_distance" android:text="0" android:layout_below="@id/tv_distance_title" style="@style/home_cardview1_tv2_style" />
+                                <TextView android:id="@id/tv_km" android:text="@string/km" android:layout_toRightOf="@id/tv_distance" android:layout_alignBottom="@id/tv_distance" style="@style/home_cardview1_tv3_style" />
+                            </RelativeLayout>
+                            <RelativeLayout style="@style/home_cardview1_layout1_style">
+                                <TextView android:id="@id/tv_consume_title" android:text="@string/consume" android:drawableBottom="@mipmap/home_consumption_icon" style="@style/home_cardview1_tv1_style" />
+                                <xfkj.fitpro.view.NewsLabFontsTextView android:id="@id/tv_consume" android:text="0" android:layout_below="@id/tv_consume_title" style="@style/home_cardview1_tv2_style" />
+                                <TextView android:text="@string/kcary_txt" android:layout_toRightOf="@id/tv_consume" android:layout_alignBottom="@id/tv_consume" style="@style/home_cardview1_tv3_style" />
+                            </RelativeLayout>
+                            <RelativeLayout style="@style/home_cardview1_layout1_style">
+                                <TextView android:id="@id/tv_target_title" android:text="@string/target_txt" android:drawableBottom="@mipmap/home_target_icon" style="@style/home_cardview1_tv1_style" />
+                                <xfkj.fitpro.view.FangDaFontsTextView android:textSize="17.0sp" android:id="@id/tv_target2" android:layout_marginTop="10.0dip" android:maxWidth="100.0dip" android:text="@string/incomplete" android:layout_below="@id/tv_target_title" style="@style/home_cardview1_tv2_style" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                    <include layout="@layout/include_fragment_home_menu" />
+                </LinearLayout>
+            </RelativeLayout>
+            <include layout="@layout/include_layout_home_fragment_unused_resource" />
+        </LinearLayout>
+    </ScrollView>
+    <include layout="@layout/include_layout_feed_adv" />
+</LinearLayout>

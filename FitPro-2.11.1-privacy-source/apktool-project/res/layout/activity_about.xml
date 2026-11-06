@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_about" android:background="@color/bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/include_title" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@id/tv_version" style="@style/about_tv4_style" />
+            <ImageView android:id="@id/img_qrcode" style="@style/about_img1_style" />
+            <TextView style="@style/about_tv2_style" />
+            <Button android:id="@id/btn_share" style="@style/about_tv1_style" />
+            <View android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="@dimen/dp_30" />
+            <TextView android:id="@id/tv_link_protcol" style="@style/about_tv3_style" />
+            <TextView android:textSize="15.0sp" android:textColor="@color/textColorBlack" android:id="@id/tv_link_open_sourece_protcol" android:background="@color/white" android:padding="10.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:drawableRight="@mipmap/home_right_icon" />
+            <TextView android:textSize="15.0sp" android:textColor="@color/textColorBlack" android:id="@id/tv_link_help" android:background="@color/white" android:padding="10.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="@string/help" android:drawableRight="@mipmap/home_right_icon" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

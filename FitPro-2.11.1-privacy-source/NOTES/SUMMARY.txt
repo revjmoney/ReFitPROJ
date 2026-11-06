@@ -1,0 +1,15 @@
+FitPro static analysis (user XAPK) — short result
+
+Verified: cn.xiaofengkj.fitpro 2.11.1 (211), Play App Signing cert, XAPK SHA256 b713081918c587cce5bd54b605666e1b676579453c952dc076c2fe5d38ef43f1
+Decompile: partial success (apktool resources + jadx on OTA/BLE key classes). Not full-app source recovery.
+
+BLE: Nordic UART 6e400001/002/003; framing header 0xCD; cmd group 0x12 — matches Gadgetbridge FitPro. LH716/V31322 strings NOT in APK.
+
+OTA: multi-SoC router PlarmType 1/3/4/5/6/7/8 → Telink/Beken/OnMicro/Yichip/LP/JieLi/HTX (+ Realtek packaged). No bundled firmware; downloads from tomato.gulaike.com/api/v1/config/app?...&platform={PlarmType}. Cannot map LH716(G)/V31322 to one chip from APK alone.
+
+Ads/cloud: heavy mediation (UNAD/Yandex/ByteDance/Mintegral/AppLovin/…); API fpapi2.jusonsmart.com. Inventory only.
+
+Unknown: this bracelet’s PlarmType/SoC; whether server has firmware for V31322.
+Next (needs user OK): read-only GATT capture and/or check stock app soft-version/OTA UI — no flashing.
+
+Details: /workspace/fitpro-inspection/FINDINGS.md

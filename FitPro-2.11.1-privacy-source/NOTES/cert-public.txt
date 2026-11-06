@@ -1,0 +1,4 @@
+Owner: CN=FitPro Privacy Test, OU=Local, O=Local Rebuild, L=Local, ST=NA, C=US
+Valid from: Fri Nov 06 10:31:50 EST 2026 until: Tue Oct 31 11:31:50 EDT 2051
+	 SHA1: D4:08:41:FA:08:C4:8E:A9:F1:9B:D2:ED:B6:EF:F4:34:46:C7:67:08
+	 SHA256: A2:0D:A4:B6:D5:2F:E5:F2:74:4B:20:A3:75:4A:14:31:D8:DF:4C:10:29:AE:A4:0E:26:0C:84:53:97:15:35:32

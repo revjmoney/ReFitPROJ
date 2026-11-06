@@ -1,0 +1,13 @@
+HttpHelper: stubbed ['launchAppx9', 'updateDeviceInfox9', 'loadAdvShowStatusx9', 'uploadStepsx9', 'uploadSleepx9', 'uploadHeartBloodx9', 'uploadRealStepsx9', 'uploadTmpx9', 'uploadFeedbackx9', 'uploadWutongYunApi1x9', 'getWeatherx9', 'getWeather2x9', 'getWeatherForecastx9', 'getRealStepsx9', 'updateDevidx9', 'updateInfox9', 'saveSleepTimex9', 'saveSportRecordx9', 'queryProductInfox9', 'queryWatchThemeListx9', 'queryWatchThemeList2x9', 'queryWatchThemeListTestx9', 'queryWatchThemeDetailsx9', 'recordWatchThemeDownloadLogsx9', 'bmp16Convert8BitByNetworkx9', 'convertLHDialx9', 'loginOfEmailx9', 'registerOfEmailx9', 'registerOfEmail2x9', 'socialLoginx9', 'loginOutx9', 'getQiLiuYunTokenx9', 'getAuthorizedQrcodex9', 'getBeatCountx9', 'getStepRankx9', 'queryStepsRankx9', 'loadHistorySportx9', 'loadHistorySportDetailsx9', 'createUserHabbitx9', 'deleteUserHabbitx9', 'saveUserHabbitx9', 'signUserHabbitx9', 'loadUserHabbitConfigx9', 'queryUserHabbitListx9', 'queryUserHabbitListDetailsx9', 'getHabbitRankx9', 'getHabbitRankSignCountx9', 'deleteWatchFriendx9', 'queryWatchFriendsStepsx9', 'sendWatchMsgx9', 'getAdviceListx9', 'querySignInfox9', 'querySignRecordx9', 'userSignx9', 'stepRankLikex9', 'unregisterUserx9', 'updateRankedx9', 'getWatchChargeStatusx9', 'getWatchWhiteListx9']; missing []
+getOTAUpgradeInfo: gulaike string present OK
+smali_classes11/xfkj/fitpro/utils/adv/AdSdkBootstrap.smali: stubbed ['shouldInitGlobalAd', 'initGlobalAdIfNeeded', 'ensureProvider']; MISSING []
+smali_classes11/xfkj/fitpro/utils/CommonUtils.smali: stubbed ['isShowAdv', 'isAllowAdvApplication', 'uploadData']; MISSING []
+smali_classes11/xfkj/fitpro/activity/WelcomeActivity.smali: stubbed ['httpDataFromServer']; MISSING []
+smali_classes11/xfkj/fitpro/activity/SplashActivity.smali: stubbed ['initAdv', 'showSplashAdv', 'loadSplashAd']; MISSING []
+SplashActivity.showSplashAdv -> startMain()
+smali_classes11/xfkj/fitpro/application/MyApplication.smali: stubbed ['initAdSDK', 'initProductInfo']; MISSING []
+UploadDataService.onCreate -> stopSelf
+smali_classes11/xfkj/fitpro/utils/adv/HotStartInterstitialManager.smali: stubbed ['onAppForeground', 'onAppBackground', 'preloadInterstitial']; MISSING []
+smali_classes11/xfkj/fitpro/manager/ProductInfoManager.smali: stubbed ['requestProductInfo', 'requestProductInfoIfNeeded']; MISSING []
+R.bool.isShowAdv -> false
+BuildConfig.USE_GLOBAL_AD -> false

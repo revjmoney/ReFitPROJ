@@ -1,0 +1,135 @@
+.class public final Lcom/inmobi/media/Qj;
+.super Lkotlin/coroutines/jvm/internal/SuspendLambda;
+.source "SourceFile"
+
+# interfaces
+.implements Lkotlin/jvm/functions/Function2;
+
+
+# instance fields
+.field public final synthetic a:Lcom/inmobi/media/Tj;
+
+.field public final synthetic b:Ljava/util/Map;
+
+
+# direct methods
+.method public constructor <init>(Lcom/inmobi/media/Tj;Ljava/util/Map;Lkotlin/coroutines/Continuation;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/inmobi/media/Qj;->a:Lcom/inmobi/media/Tj;
+
+    iput-object p2, p0, Lcom/inmobi/media/Qj;->b:Ljava/util/Map;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 2
+
+    .line 1
+    new-instance p1, Lcom/inmobi/media/Qj;
+
+    iget-object v0, p0, Lcom/inmobi/media/Qj;->a:Lcom/inmobi/media/Tj;
+
+    iget-object v1, p0, Lcom/inmobi/media/Qj;->b:Ljava/util/Map;
+
+    invoke-direct {p1, v0, v1, p2}, Lcom/inmobi/media/Qj;-><init>(Lcom/inmobi/media/Tj;Ljava/util/Map;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    .line 1
+    new-instance p1, Lcom/inmobi/media/Qj;
+
+    iget-object v0, p0, Lcom/inmobi/media/Qj;->a:Lcom/inmobi/media/Tj;
+
+    iget-object v1, p0, Lcom/inmobi/media/Qj;->b:Ljava/util/Map;
+
+    invoke-direct {p1, v0, v1, p2}, Lcom/inmobi/media/Qj;-><init>(Lcom/inmobi/media/Tj;Ljava/util/Map;Lkotlin/coroutines/Continuation;)V
+
+    .line 2
+    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    invoke-virtual {p1, p2}, Lcom/inmobi/media/Qj;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
+
+    .line 1
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    .line 2
+    iget-object p1, p0, Lcom/inmobi/media/Qj;->a:Lcom/inmobi/media/Tj;
+
+    .line 3
+    iget-object v0, p1, Lcom/inmobi/media/Tj;->c:Lcom/inmobi/media/y;
+
+    .line 4
+    iget-object v0, v0, Lcom/inmobi/media/y;->b:Lcom/inmobi/media/H;
+
+    .line 5
+    invoke-virtual {p1, v0}, Lcom/inmobi/media/Tj;->a(Lcom/inmobi/media/H;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    .line 6
+    iget-object p1, p0, Lcom/inmobi/media/Qj;->a:Lcom/inmobi/media/Tj;
+
+    .line 7
+    iget-object p1, p1, Lcom/inmobi/media/Tj;->d:Lcom/inmobi/ads/controllers/PublisherCallbacks;
+
+    .line 8
+    iget-object v0, p0, Lcom/inmobi/media/Qj;->b:Ljava/util/Map;
+
+    invoke-virtual {p1, v0}, Lcom/inmobi/ads/controllers/PublisherCallbacks;->onAdClicked(Ljava/util/Map;)V
+
+    goto :goto_0
+
+    .line 10
+    :cond_0
+    iget-object p1, p0, Lcom/inmobi/media/Qj;->a:Lcom/inmobi/media/Tj;
+
+    invoke-virtual {p1}, Lcom/inmobi/media/z;->l()Lcom/inmobi/media/Y9;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    check-cast p1, Lcom/inmobi/media/Z9;
+
+    const-string v0, "AUM-RenderedState"
+
+    const-string v1, "onAdClicked callback blocked."
+
+    invoke-virtual {p1, v0, v1}, Lcom/inmobi/media/Z9;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 12
+    :cond_1
+    :goto_0
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
+.end method

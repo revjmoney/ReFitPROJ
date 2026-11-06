@@ -1,0 +1,19 @@
+.class public final Lads_mobile_sdk/n7;
+.super Lads_mobile_sdk/go;
+.source "SourceFile"
+
+
+# direct methods
+.method public constructor <init>(Lads_mobile_sdk/cr0;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "flagValueProvider"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 13
+    invoke-direct {p0, p1}, Lads_mobile_sdk/go;-><init>(Lads_mobile_sdk/cr0;)V
+
+    return-void
+.end method

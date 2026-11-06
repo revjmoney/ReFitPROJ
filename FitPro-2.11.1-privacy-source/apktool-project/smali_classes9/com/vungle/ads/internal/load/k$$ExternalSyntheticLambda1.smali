@@ -1,0 +1,48 @@
+.class public final synthetic Lcom/vungle/ads/internal/load/k$$ExternalSyntheticLambda1;
+.super Ljava/lang/Object;
+.source "D8$$SyntheticClass"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic f$0:Lcom/vungle/ads/internal/load/l;
+
+.field public final synthetic f$1:Lcom/vungle/ads/internal/model/j3;
+
+.field public final synthetic f$2:Lcom/vungle/ads/internal/network/o;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcom/vungle/ads/internal/load/l;Lcom/vungle/ads/internal/model/j3;Lcom/vungle/ads/internal/network/o;)V
+    .locals 0
+
+    .line 0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/vungle/ads/internal/load/k$$ExternalSyntheticLambda1;->f$0:Lcom/vungle/ads/internal/load/l;
+
+    iput-object p2, p0, Lcom/vungle/ads/internal/load/k$$ExternalSyntheticLambda1;->f$1:Lcom/vungle/ads/internal/model/j3;
+
+    iput-object p3, p0, Lcom/vungle/ads/internal/load/k$$ExternalSyntheticLambda1;->f$2:Lcom/vungle/ads/internal/network/o;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .locals 3
+
+    .line 0
+    iget-object v0, p0, Lcom/vungle/ads/internal/load/k$$ExternalSyntheticLambda1;->f$0:Lcom/vungle/ads/internal/load/l;
+
+    iget-object v1, p0, Lcom/vungle/ads/internal/load/k$$ExternalSyntheticLambda1;->f$1:Lcom/vungle/ads/internal/model/j3;
+
+    iget-object v2, p0, Lcom/vungle/ads/internal/load/k$$ExternalSyntheticLambda1;->f$2:Lcom/vungle/ads/internal/network/o;
+
+    invoke-static {v0, v1, v2}, Lcom/vungle/ads/internal/load/k;->a(Lcom/vungle/ads/internal/load/l;Lcom/vungle/ads/internal/model/j3;Lcom/vungle/ads/internal/network/o;)V
+
+    return-void
+.end method

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/tv_export_personal_data" android:text="@string/export_personal_data" android:drawableLeft="@mipmap/my_dateout_icon" style="@style/mine_cardview2_tv1_style" />
+    <View style="@style/mine_cardview2_line_style" />
+</merge>

@@ -1,0 +1,214 @@
+.class public final Lyads/re2;
+.super Ljavax/net/ssl/SSLSocketFactory;
+.source "SourceFile"
+
+
+# static fields
+.field public static final synthetic b:I
+
+
+# instance fields
+.field public final a:Ljavax/net/ssl/SSLSocketFactory;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljavax/net/ssl/SSLSocketFactory;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljavax/net/ssl/SSLSocketFactory;-><init>()V
+
+    .line 2
+    iput-object p1, p0, Lyads/re2;->a:Ljavax/net/ssl/SSLSocketFactory;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final createSocket(Ljava/lang/String;I)Ljava/net/Socket;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lyads/re2;->a:Ljavax/net/ssl/SSLSocketFactory;
+
+    invoke-virtual {v0, p1, p2}, Ljavax/net/SocketFactory;->createSocket(Ljava/lang/String;I)Ljava/net/Socket;
+
+    move-result-object p1
+
+    .line 2
+    iget-object p2, p0, Lyads/re2;->a:Ljavax/net/ssl/SSLSocketFactory;
+
+    invoke-static {p2}, Lyads/qe2;->a(Ljavax/net/ssl/SSLSocketFactory;)[Ljava/lang/String;
+
+    move-result-object p2
+
+    .line 3
+    const-string v0, "null cannot be cast to non-null type javax.net.ssl.SSLSocket"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    move-object v0, p1
+
+    check-cast v0, Ljavax/net/ssl/SSLSocket;
+
+    invoke-virtual {v0, p2}, Ljavax/net/ssl/SSLSocket;->setEnabledCipherSuites([Ljava/lang/String;)V
+
+    return-object p1
+.end method
+
+.method public final createSocket(Ljava/lang/String;ILjava/net/InetAddress;I)Ljava/net/Socket;
+    .locals 1
+
+    .line 10
+    iget-object v0, p0, Lyads/re2;->a:Ljavax/net/ssl/SSLSocketFactory;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Ljavax/net/SocketFactory;->createSocket(Ljava/lang/String;ILjava/net/InetAddress;I)Ljava/net/Socket;
+
+    move-result-object p1
+
+    .line 11
+    iget-object p2, p0, Lyads/re2;->a:Ljavax/net/ssl/SSLSocketFactory;
+
+    invoke-static {p2}, Lyads/qe2;->a(Ljavax/net/ssl/SSLSocketFactory;)[Ljava/lang/String;
+
+    move-result-object p2
+
+    .line 12
+    const-string p3, "null cannot be cast to non-null type javax.net.ssl.SSLSocket"
+
+    invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    move-object p3, p1
+
+    check-cast p3, Ljavax/net/ssl/SSLSocket;
+
+    invoke-virtual {p3, p2}, Ljavax/net/ssl/SSLSocket;->setEnabledCipherSuites([Ljava/lang/String;)V
+
+    return-object p1
+.end method
+
+.method public final createSocket(Ljava/net/InetAddress;I)Ljava/net/Socket;
+    .locals 1
+
+    .line 4
+    iget-object v0, p0, Lyads/re2;->a:Ljavax/net/ssl/SSLSocketFactory;
+
+    invoke-virtual {v0, p1, p2}, Ljavax/net/SocketFactory;->createSocket(Ljava/net/InetAddress;I)Ljava/net/Socket;
+
+    move-result-object p1
+
+    .line 5
+    iget-object p2, p0, Lyads/re2;->a:Ljavax/net/ssl/SSLSocketFactory;
+
+    invoke-static {p2}, Lyads/qe2;->a(Ljavax/net/ssl/SSLSocketFactory;)[Ljava/lang/String;
+
+    move-result-object p2
+
+    .line 6
+    const-string v0, "null cannot be cast to non-null type javax.net.ssl.SSLSocket"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    move-object v0, p1
+
+    check-cast v0, Ljavax/net/ssl/SSLSocket;
+
+    invoke-virtual {v0, p2}, Ljavax/net/ssl/SSLSocket;->setEnabledCipherSuites([Ljava/lang/String;)V
+
+    return-object p1
+.end method
+
+.method public final createSocket(Ljava/net/InetAddress;ILjava/net/InetAddress;I)Ljava/net/Socket;
+    .locals 1
+
+    .line 13
+    iget-object v0, p0, Lyads/re2;->a:Ljavax/net/ssl/SSLSocketFactory;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Ljavax/net/SocketFactory;->createSocket(Ljava/net/InetAddress;ILjava/net/InetAddress;I)Ljava/net/Socket;
+
+    move-result-object p1
+
+    .line 14
+    iget-object p2, p0, Lyads/re2;->a:Ljavax/net/ssl/SSLSocketFactory;
+
+    invoke-static {p2}, Lyads/qe2;->a(Ljavax/net/ssl/SSLSocketFactory;)[Ljava/lang/String;
+
+    move-result-object p2
+
+    .line 15
+    const-string p3, "null cannot be cast to non-null type javax.net.ssl.SSLSocket"
+
+    invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    move-object p3, p1
+
+    check-cast p3, Ljavax/net/ssl/SSLSocket;
+
+    invoke-virtual {p3, p2}, Ljavax/net/ssl/SSLSocket;->setEnabledCipherSuites([Ljava/lang/String;)V
+
+    return-object p1
+.end method
+
+.method public final createSocket(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;
+    .locals 1
+
+    .line 7
+    iget-object v0, p0, Lyads/re2;->a:Ljavax/net/ssl/SSLSocketFactory;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Ljavax/net/ssl/SSLSocketFactory;->createSocket(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;
+
+    move-result-object p1
+
+    .line 8
+    iget-object p2, p0, Lyads/re2;->a:Ljavax/net/ssl/SSLSocketFactory;
+
+    invoke-static {p2}, Lyads/qe2;->a(Ljavax/net/ssl/SSLSocketFactory;)[Ljava/lang/String;
+
+    move-result-object p2
+
+    .line 9
+    const-string p3, "null cannot be cast to non-null type javax.net.ssl.SSLSocket"
+
+    invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    move-object p3, p1
+
+    check-cast p3, Ljavax/net/ssl/SSLSocket;
+
+    invoke-virtual {p3, p2}, Ljavax/net/ssl/SSLSocket;->setEnabledCipherSuites([Ljava/lang/String;)V
+
+    return-object p1
+.end method
+
+.method public final getDefaultCipherSuites()[Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lyads/re2;->a:Ljavax/net/ssl/SSLSocketFactory;
+
+    invoke-static {v0}, Lyads/qe2;->a(Ljavax/net/ssl/SSLSocketFactory;)[Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getSupportedCipherSuites()[Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lyads/re2;->a:Ljavax/net/ssl/SSLSocketFactory;
+
+    invoke-static {v0}, Lyads/qe2;->b(Ljavax/net/ssl/SSLSocketFactory;)[Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method

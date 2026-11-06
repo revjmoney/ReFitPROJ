@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/include_title" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="测试发送数据到蓝牙设备" android:onClick="testSendData" />
+            <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="测试发送乘车码到平台上" android:onClick="testSendChengCheData" />
+            <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="注册设备（三元组数据）1" android:onClick="registerDevice1" />
+            <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="注册设备（三元组数据）2" android:onClick="registerDevice2" />
+            <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="获取ID2的数据状态" android:onClick="getID2DataStatus" />
+            <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="DebugData1" android:onClick="debugData1" />
+            <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="DebugData2" android:onClick="debugData2" />
+            <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="DebugData3" android:onClick="debugData3" />
+            <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="DebugData4" android:onClick="debugData4" />
+            <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="DebugData5" android:onClick="debugData5" />
+            <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="DebugData6" android:onClick="debugData6" />
+            <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="DebugData7" android:onClick="debugData7" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
