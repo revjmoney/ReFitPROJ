@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Rebuild standalone APK (apktool)
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      APKTOOL_VERSION: 2.12.1
+      APKTOOL_SHA256: 66cf4524a4a45a7f56567d08b2c9b6ec237bcdd78cee69fd4a59c8a0243aeafa
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Install apktool (pinned, checksum verified) and Android build-tools
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/bin"
+          curl -fsSL -o "$RUNNER_TEMP/bin/apktool.jar" \
+            "https://github.com/iBotPeaches/Apktool/releases/download/v${APKTOOL_VERSION}/apktool_${APKTOOL_VERSION}.jar"
+          echo "${APKTOOL_SHA256}  $RUNNER_TEMP/bin/apktool.jar" | sha256sum -c -
+          printf '#!/bin/sh\nexec java -Xmx6g -jar "%s/apktool.jar" "$@"\n' "$RUNNER_TEMP/bin" > "$RUNNER_TEMP/bin/apktool"
+          chmod +x "$RUNNER_TEMP/bin/apktool"
+          SDKM="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          yes | "$SDKM" --licenses > /dev/null || true
+          "$SDKM" "build-tools;35.0.0" > /dev/null
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
+          echo "$ANDROID_HOME/build-tools/35.0.0" >> "$GITHUB_PATH"
+      - name: Rebuild with scripts/rebuild-standalone.sh (throwaway CI key)
+        run: |
+          apktool --version
+          bash FitPro-2.11.1-privacy-source/scripts/rebuild-standalone.sh
+      - name: Keep only the signed APK
+        run: |
+          mkdir -p upload
+          cp FitPro-2.11.1-privacy-source/out-rebuild/FitPro-2.11.1-privacy-standalone-rebuilt.apk upload/
+          ls -l upload
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ReFitPROJ-standalone-apk
+          path: upload/*.apk
+          retention-days: 30
+          if-no-files-found: error
+
+  guard:
+    name: Private data guard
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Block home IPs, personal email, tokens, keys and secret project names
+        run: |
+          found=0
+          if git grep -n -I -E '192\.168\.1\.[0-9]+|myemail937|ghp_[A-Za-z0-9]{20,}|github_pat_|-----BEGIN [A-Z ]*PRIVATE KEY' -- . ':!.github/workflows/ci.yml'; then found=1; fi
+          if git grep -n -I -i -E 'rose.?engine|guilloche|gen-rose' -- . ':!.github/workflows/ci.yml'; then found=1; fi
+          if [ "$found" = 1 ]; then
+            echo "::error::Private data pattern found. Remove it before merging."
+            exit 1
+          fi
+          echo "Guard clean."
